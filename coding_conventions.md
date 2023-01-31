@@ -28,7 +28,7 @@ References
 頭字語（e.g., HTTP）は単語の字数に依らずcamelCaseにする。
 
 References
-- C#のコーディング規約では、3文字以上はcamelCase [要出典]
+- [C#のコーディング規約では、3文字以上はcamelCase](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions#capitalization-rules-for-identifiers)
 
 ### 辞書
 
