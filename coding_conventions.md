@@ -14,10 +14,14 @@ References
 略語は基本的に使わない。Allow Listで許可された略語だけを使う。
 
 Allow List
-- `i`、`j`、`k`、`l`（ループカウンタ）
-- `sec`（second、時間の単位）
-- `ms`（millisecond、時間の単位）
-- `prop(s)`（Reactの用語）
+
+| 略語 | 意味 | 理由 |
+|-|-|-|
+| `i`, `j`, `k`, `l` | ループカウンタ | 十分に流布しており誤解しないから。小さいスコープでの使用に限定する。 |
+| `min`, `max` | minimum, maximum | 十分に流布しており誤解しないから。 |
+| `sec` | second (秒) | 補足的な情報だから。変数などが持つ数値の単位を表す接尾辞に限定する。 |
+| `ms` | millisecond | 同上 |
+| `prop(s)` | property | Reactの用語だから。 https://ja.reactjs.org/docs/components-and-props.html |
 
 References
 - https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md
