@@ -29,7 +29,7 @@ References
 
 ### 頭字語
 
-頭字語（e.g., HTTP）は単語の字数に依らずcamelCaseにする。
+頭字語（e.g., CSV, HTTP）は単語の字数に依らずcamelCase（e.g., `Csv`, `Http`）にする。
 
 References
 - [C#のコーディング規約では、3文字以上はcamelCase](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions#capitalization-rules-for-identifiers)
