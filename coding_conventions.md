@@ -39,6 +39,18 @@ References
 辞書のように扱う変数については `keyToValue` という命名にする。`Value`が配列等でなければ、単数形にする。
 また、 `Record<Key, Value>` ではなく `Map<Key, Value>` を使う。
 
-## Named importを使う
+## ファイル構造
+
+### Named importを使う
 
 可能な限り Default import よりも、 Named import を使う。
+
+## 依存パッケージ
+
+特に理由がない限り、次のパッケージを採用する。
+
+| 用途 | パッケージ | 理由 |
+|-|-|-|
+| ログ | [winston](https://github.com/winstonjs/winston) | TBD |
+| 日付パース・フォーマット | TBD (Temporal vs [Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
+| CSVパース・フォーマット | TBD ([PapaParse](https://github.com/mholt/PapaParse) vs [node-csv](https://github.com/adaltas/node-csv)) | TBD |
