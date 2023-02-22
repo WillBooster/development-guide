@@ -2,6 +2,12 @@
 
 ## 命名
 
+実態を過不足なく表現した名を付ける。
+誤解の可能性が低い名を付ける。
+
+References
+- [リーダブルコード](https://www.oreilly.co.jp/books/9784873115658/)
+
 ### 単数系・複数形
 
 単位が時刻を表すときは単数形（2時は`hour = 2`）、期間を表すときは複数形（2時間は`hours = 2`）を使う。
@@ -38,6 +44,27 @@ References
 
 辞書のように扱う変数については `keyToValue` という命名にする。`Value`が配列等でなければ、単数形にする。
 また、 `Record<Key, Value>` ではなく `Map<Key, Value>` を使う。
+
+### React
+
+`Context.Provider`をラップしたコンポーネントの名の末尾に`Provider`を付ける。
+（e.g., `UserProvider`）
+
+References
+- [`ChakraProvider`](https://chakra-ui.com/getting-started) (Chakra UI)
+- [`ThemeProvider`](https://emotion.sh/docs/theming) (Emotion)
+
+`useContext`をラップしたフックの名の末尾に`Context`を付けない。
+（e.g., `useUser`）
+ただし、付けないと意味が伝わらない場合は付けてもよい。
+
+References
+- [`useTheme`](https://emotion.sh/docs/theming) (Emotion)
+- [`useRouter`](https://nextjs.org/docs/api-reference/next/router) (Next.js)
+- [`useFormContext`](https://react-hook-form.com/api/useformcontext) (React Hook Form)
+
+[`useContextSelector`](https://github.com/dai-shi/use-context-selector)をラップしたフックの名の末尾に`Selector`を付ける。
+（e.g., `useUserSelector`）
 
 ## ファイル構造
 
