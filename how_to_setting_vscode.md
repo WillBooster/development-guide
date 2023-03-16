@@ -5,7 +5,7 @@
 ## ダウンロード
 
 ダウンロードは[こちら](https://code.visualstudio.com/)
-"Download {Version}"のようなボタン（たとえば"Download Mac Universal", "Download for Windows"など）を押下するとOSに対応したソフトウェアがダウンロードされる。（アクセスしているPCのOSと万が一ことなるバージョンが表示された場合は、その右側にある"∨"マークをクリックして対応したバージョンを選択する。）
+"Download {Version}"のようなボタン（たとえば"Download Mac Universal", "Download for Windows"など）を押下するとOSに対応したソフトウェアがダウンロードされる。（アクセスしているPCのOSと異なるバージョンが表示された場合は、その右側にある"∨"マークをクリックして対応したバージョンを選択する。）
 
 ## インストール
 
@@ -51,7 +51,7 @@ Japanese Language Packをインストールする。
 
 ## フォント
 
-VS Codeデフォルトのフォントは、お世辞にもプログラミング向けとは言い難い。等幅フォントに変更をオススメする。筆者は(UDEV Gothic)[https://github.com/yuru7/udev-gothic] が最近のお気に入り。全角スペースが入ってしまったときに気付きやすいという特徴がある。(全角スペースの対処だけならVSCodeの拡張にもありますので、お好みで。)
+VS Codeデフォルトのフォントは、お世辞にもプログラミング向けとは言い難い。等幅フォントに変更をオススメする。筆者は[UDEV Gothic](https://github.com/yuru7/udev-gothic)が最近のお気に入り。全角スペースが入ってしまったときに気付きやすいという特徴がある。(全角スペースの対処だけならVSCodeの拡張にもありますので、お好みで。)
 
 
 ## その他オススメ拡張
