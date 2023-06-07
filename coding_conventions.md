@@ -25,8 +25,8 @@ Allow List
 |-|-|-|
 | `i`, `j`, `k`, `l` | ループカウンタ | 十分に流布しており誤解しないから。小さいスコープでの使用に限定する。 |
 | `min`, `max` | minimum, maximum | 十分に流布しており誤解しないから。 |
-| `sec` | second (秒) | 補足的な情報だから。変数などが持つ数値の単位を表す接尾辞に限定する。 |
-| `ms` | millisecond | 同上 |
+| `sec` | second（秒） | 補足的な情報だから。変数などが持つ数値の単位を表す接尾辞に限定する。e.g. `timeLimitSec` |
+| `ms` | millisecond | 同上。e.g. `timeLimitMs` |
 | `prop(s)` | property | Reactの用語だから。 https://ja.reactjs.org/docs/components-and-props.html |
 
 References
@@ -35,7 +35,8 @@ References
 
 ### 頭字語
 
-頭字語（e.g., CSV, HTTP）は単語の字数に依らずcamelCase（e.g., `Csv`, `Http`）にする。
+頭字語（e.g., CSV, HTTP）は単語の字数に依らず他の単語と同じように扱う。
+つまり、camelCaseならば語の先頭を大文字または小文字に、先頭以外を小文字に（e.g., `Csv`, `Http`）する。
 
 References
 - [C#のコーディング規約では、3文字以上はcamelCase](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions#capitalization-rules-for-identifiers)
@@ -81,3 +82,4 @@ References
 | ログ | [winston](https://github.com/winstonjs/winston) | TBD |
 | 日付パース・フォーマット | TBD (Temporal vs [Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
 | CSVパース・フォーマット | TBD ([PapaParse](https://github.com/mholt/PapaParse) vs [node-csv](https://github.com/adaltas/node-csv)) | TBD |
+| スキーマ | [Zod](https://github.com/colinhacks/zod) | 静的型推論に対応しているから。機能が充実しているから。 |
