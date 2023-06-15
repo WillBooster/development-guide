@@ -3,6 +3,10 @@
 社内の開発者のサポートを受けやすいMac、次点でLinux（Ubuntu）上での開発を推奨します。
 Windowsをご利用の方は、Windows Subsystem for Linux 2（WSL2）上での開発を推奨します。
 
+1. [Windows Subsystem for Linux 2 (WSL2)](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10)を有効にする。
+2. WSL2上にUbuntuをインストールする。
+   - Windows StoreでいくつかのUbuntuイメージが提供されていますが、バージョン番号が記載されていないものは最新版になるのでおすすめです。
+
 ## 環境構築
 
 [Git](https://git-scm.com/)をインストールしてください。
