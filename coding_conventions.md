@@ -8,6 +8,19 @@
 References
 - [リーダブルコード](https://www.oreilly.co.jp/books/9784873115658/)
 
+### ケース（複合語の連結）
+
+| 言語 | 命名対象 | ケース | 備考 |
+|-|-|-|-|
+| TypeScript | 変数 | `camelCase` | |
+|^ | 定数 | `SNAKE_CASE` | イミュータブルなオブジェクトを含む。 |
+|^ | 関数 | `camelCase` | |
+|^ | クラス | `PascalCase` | メンバ変数・メソッドは`camelCase`。 |
+|^ | 型・インターフェース | `PascalCase` | フィールドは`camelCase`。 |
+|^ | Reactコンポーネント | `PascalCase` | |
+|^ | ファイル | `camelCase` | |
+|^ | ファイル（Reactコンポーネント）| `PascalCase` | Reactコンポーネント名と同一の文字列を付ける。 |
+
 ### 単数系・複数形
 
 単位が時刻を表すときは単数形（2時は`hour = 2`）、期間を表すときは複数形（2時間は`hours = 2`）を使う。
