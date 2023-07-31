@@ -92,7 +92,7 @@ References
 
 | 用途 | パッケージ | 理由 |
 |-|-|-|
-| ログ | [pino](https://github.com/pinojs/pino) | 非常に高速に動作するため。 |
+| ログ | [winston](https://github.com/winstonjs/winston) | 著名かつ高機能であるため。なお、 `pino` は体験が非常に悪かったので、避けたい。 |
 | 日付パース・フォーマット | TBD (Temporal vs [Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
 | CSVパース・フォーマット | TBD ([PapaParse](https://github.com/mholt/PapaParse) vs [node-csv](https://github.com/adaltas/node-csv)) | TBD |
 | スキーマ | [Zod](https://github.com/colinhacks/zod) | 静的型推論に対応しているから。機能が充実しているから。 |
