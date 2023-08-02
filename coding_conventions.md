@@ -93,6 +93,7 @@ References
 | 用途 | パッケージ | 理由 |
 |-|-|-|
 | ログ | [pino](https://github.com/pinojs/pino) | 超高速かつそれなりに有名だから。 `winston` よりもAsynchronousな処理の対応に優れているから。 |
-| 日付パース・フォーマット | TBD (Temporal vs [Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
-| CSVパース・フォーマット | TBD ([PapaParse](https://github.com/mholt/PapaParse) vs [node-csv](https://github.com/adaltas/node-csv)) | TBD |
+| 日付時刻 | [Temporal](https://tc39.es/proposal-temporal/docs/ja/index.html) | まだプロポーザルだが、標準ライブラリに入る可能性が高いから。ポリフィルには[@js-temporal/polyfill](https://github.com/js-temporal/temporal-polyfill)を採用する。 |
+| 日付時刻パース・フォーマット | TBD ([Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
+| CSVパース・フォーマット | [node-csv](https://github.com/adaltas/node-csv) | TBD [PapaParse](https://github.com/mholt/PapaParse)よりも……だから。 |
 | スキーマ | [Zod](https://github.com/colinhacks/zod) | 静的型推論に対応しているから。機能が充実しているから。 |
