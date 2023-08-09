@@ -126,11 +126,10 @@ References
 ### アンマウントされたコンポーネントの非同期処理
 
 非同期処理の結果などによって、アンマウント済みのコンポーネントで何らかの処理が実行されることがある。
+[`useUnmountPromise`](https://github.com/streamich/react-use/blob/master/docs/useUnmountPromise.md)を使用するとそのような実行を阻止できるが、不具合も重大なパフォーマンス低下も発生しない場合には使用してはならない。
 
-`setState`が実行されると、React 17以前では警告が発生していたが、React 18以降であれば発生しなくなったので、実行を中止する必要はなくなった。
-したがって、[`useUnmountPromise`](https://github.com/streamich/react-use/blob/master/docs/useUnmountPromise.md)などによる非同期処理の停止は冗長なので、使用してはならない。
-
-その他の**本当に必要な場合に限って**、`useUnmountPromise`の使用を継続する。
+`setState`が実行される場合、React 17以前では警告が発生したので、`useUnmountPromise`が必要だった。
+しかし、React 18以降では警告が発生しなくなったので、`setState`の阻止だけを目的とした`useUnmountPromise`の使用を禁止する。
 
 References
 - https://github.com/facebook/react/pull/22114
