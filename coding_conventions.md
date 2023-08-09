@@ -59,6 +59,16 @@ References
 辞書のように扱う変数については `keyToValue` という命名にする。`Value`が配列等でなければ、単数形にする。
 また、 `Record<Key, Value>` ではなく `Map<Key, Value>` を使う。
 
+### 関数
+
+関数名の先頭の語は動詞にする。
+
+| 動作 | 動詞（動詞句） | 理由・備考 |
+|-|-|-|
+| 変換する | `convert` | `aToB`、`a2b`（先頭の語を動詞にしていない。）ではなく`convertAToB`と命名する。 |
+| Page object model（POM）で、UIを操作して画面遷移する | `navigateTo` | `goTo`よりも複雑な手順を踏んでいる印象が強いから。 |
+| Page object model（POM）で、URLを変更して画面遷移する | `open` | `goTo`よりも`navigateTo`と混同しづらいから。（`open`であるべき理由が足りない問題、新しいウィンドウ・タブを開く印象を受ける問題が残っているため、再検討する。） |
+
 ### React
 
 `Context.Provider`をラップしたコンポーネントの名の末尾に`Provider`を付ける。
@@ -82,15 +92,22 @@ References
 
 ## ファイル構造
 
-### Named importを使う
+### Named importを使用する
 
 可能な限り Default import よりも、 Named import を使う。
 
 ## アンチパターン
 
-### `enum` を
+### TypeScriptの列挙型（`enum`）を使用している
 
-TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを妨げるため、`enum`は使わない。
+TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを妨げるため、`enum`を使用してはならない。
+
+代わりにオブジェクトリテラルを使用する。
+元々列挙型を使用するほどではなかった小規模なコードでは、ユニオン型を使用し続けてよい。
+いずれについても、referencesの記事にサンプルコードが記載されている。
+
+References
+- [列挙型(enum)の問題点と代替手段 | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/enum/enum-problems-and-alternatives-to-enums)
 
 ## 依存パッケージ
 
@@ -106,16 +123,15 @@ TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを�
 
 ## React
 
-### [useUnmountPromise](https://github.com/streamich/react-use/blob/master/docs/useUnmountPromise.md) を極力使用しない
+### アンマウントされたコンポーネントの非同期処理
 
-https://github.com/facebook/react/pull/22114 を踏まえて、本当に必要なときだけUnmount後のコンポーネントの処理を停止させる。
+非同期処理の結果などによって、アンマウント済みのコンポーネントで何らかの処理が実行されることがある。
 
-## Page Object パターン
+`setState`が実行されると、React 17以前では警告が発生していたが、React 18以降であれば発生しなくなったので、実行を中止する必要はなくなった。
+したがって、[`useUnmountPromise`](https://github.com/streamich/react-use/blob/master/docs/useUnmountPromise.md)などによる非同期処理の停止は冗長なので、使用してはならない。
 
-### 別のページに遷移するための関数名は `navigateTo...` にする
+その他の**本当に必要な場合に限って**、`useUnmountPromise`の使用を継続する。
 
-ページ遷移に必要な操作が複雑である可能性があるため、 `goTo` よりも操作しているというニュアンスの強い `navigateTo` を採用する。
+References
+- https://github.com/facebook/react/pull/22114
 
-### URLを指定してページを開く関数名は `open...` にする
-
-`goTo` では、 `navigateTo` と混同する恐れがあるため、 `open`　を採用する。
