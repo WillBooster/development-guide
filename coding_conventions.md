@@ -86,6 +86,12 @@ References
 
 可能な限り Default import よりも、 Named import を使う。
 
+## アンチパターン
+
+### `enum` を
+
+TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを妨げるため、`enum`は使わない。
+
 ## 依存パッケージ
 
 特に理由がない限り、次のパッケージを採用する。
@@ -97,3 +103,19 @@ References
 | 日付時刻パース・フォーマット | TBD ([Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
 | CSVパース・フォーマット | [node-csv](https://github.com/adaltas/node-csv) | TBD [PapaParse](https://github.com/mholt/PapaParse)よりも……だから。 |
 | スキーマ | [Zod](https://github.com/colinhacks/zod) | 静的型推論に対応しているから。機能が充実しているから。 |
+
+## React
+
+### [useUnmountPromise](https://github.com/streamich/react-use/blob/master/docs/useUnmountPromise.md) を極力使用しない
+
+https://github.com/facebook/react/pull/22114 を踏まえて、本当に必要なときだけUnmount後のコンポーネントの処理を停止させる。
+
+## Page Object パターン
+
+### 別のページに遷移するための関数名は `navigateTo...` にする
+
+ページ遷移に必要な操作が複雑である可能性があるため、 `goTo` よりも操作しているというニュアンスの強い `navigateTo` を採用する。
+
+### URLを指定してページを開く関数名は `open...` にする
+
+`goTo` では、 `navigateTo` と混同する恐れがあるため、 `open`　を採用する。
