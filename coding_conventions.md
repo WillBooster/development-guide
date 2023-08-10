@@ -56,8 +56,8 @@ References
 
 ### 辞書
 
-辞書のように扱う変数については `keyToValue` という命名にする。`Value`が配列等でなければ、単数形にする。
-また、 `Record<Key, Value>` ではなく `Map<Key, Value>` を使う。
+辞書のように扱う変数については`keyToValue`という命名にする。`Value`が配列等でなければ、単数形にする。
+また、`Record<Key, Value>`ではなく`Map<Key, Value>`を使う。
 
 ### 関数
 
@@ -90,15 +90,15 @@ References
 [`useContextSelector`](https://github.com/dai-shi/use-context-selector)をラップしたフックの名の末尾に`Selector`を付ける。
 （e.g., `useUserSelector`）
 
-## ファイル構造
+## コーディングスタイル
 
-### Named importを使用する
+### TypeScript
+
+#### Named importを使用する
 
 可能な限り Default import よりも、 Named import を使う。
 
-## アンチパターン
-
-### TypeScriptの列挙型（`enum`）を使用している
+#### 列挙型（`enum`）を使用しない
 
 TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを妨げるため、`enum`を使用してはならない。
 
@@ -109,21 +109,15 @@ TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを�
 References
 - [列挙型(enum)の問題点と代替手段 | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/enum/enum-problems-and-alternatives-to-enums)
 
-## 依存パッケージ
+#### `window`オブジェクトのプロパティを使用するとき、`window`を省略しない
 
-特に理由がない限り、次のパッケージを採用する。
+`window`オブジェクトのプロパティか、他の変数・関数かを一目では区別できなくなるので、`window`を省略してはならない。
 
-| 用途 | パッケージ | 理由 |
-|-|-|-|
-| ログ | [pino](https://github.com/pinojs/pino) | 超高速かつそれなりに有名だから。 `winston` よりもAsynchronousな処理の対応に優れているから。 |
-| 日付時刻 | [Temporal](https://tc39.es/proposal-temporal/docs/ja/index.html) | まだプロポーザルだが、標準ライブラリに入る可能性が高いから。ポリフィルには[@js-temporal/polyfill](https://github.com/js-temporal/temporal-polyfill)を採用する。 |
-| 日付時刻パース・フォーマット | TBD ([Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
-| CSVパース・フォーマット | [node-csv](https://github.com/adaltas/node-csv) | TBD [PapaParse](https://github.com/mholt/PapaParse)よりも……だから。 |
-| スキーマ | [Zod](https://github.com/colinhacks/zod) | 静的型推論に対応しているから。機能が充実しているから。 |
+e.g. `setTimeout()`ではなく`window.setTimeout()`と書く。
 
-## React
+### React
 
-### アンマウントされたコンポーネントの非同期処理
+#### アンマウントされたコンポーネントの非同期処理
 
 非同期処理の結果などによって、アンマウント済みのコンポーネントで何らかの処理が実行されることがある。
 [`useUnmountPromise`](https://github.com/streamich/react-use/blob/master/docs/useUnmountPromise.md)を使用するとそのような実行を阻止できるが、不具合も重大なパフォーマンス低下も発生しない場合には使用してはならない。
@@ -134,3 +128,14 @@ References
 References
 - https://github.com/facebook/react/pull/22114
 
+## 推奨パッケージ
+
+特に理由がない限り、次のパッケージを採用する。
+
+| 用途 | パッケージ | 理由 |
+|-|-|-|
+| ログ | [pino](https://github.com/pinojs/pino) | 超高速かつそれなりに有名だから。 `winston` よりもAsynchronousな処理の対応に優れているから。 |
+| 日付時刻 | [Temporal](https://tc39.es/proposal-temporal/docs/ja/index.html) | まだプロポーザルだが、標準ライブラリに入る可能性が高いから。ポリフィルには[@js-temporal/polyfill](https://github.com/js-temporal/temporal-polyfill)を採用する。 |
+| 日付時刻パース・フォーマット | TBD ([Day.js](https://github.com/iamkun/dayjs/) vs [date-fns](https://github.com/date-fns/date-fns)) | TBD |
+| CSVパース・フォーマット | [node-csv](https://github.com/adaltas/node-csv) | TBD [PapaParse](https://github.com/mholt/PapaParse)よりも……だから。 |
+| スキーマ | [Zod](https://github.com/colinhacks/zod) | 静的型推論に対応しているから。機能が充実しているから。 |
