@@ -113,21 +113,20 @@ References
 
 `window`オブジェクトのプロパティか、他の変数・関数かを一目では区別できなくなるので、`window`を省略してはならない。
 
-e.g. `setTimeout()`ではなく`window.setTimeout()`と書く。
+E.g., `setTimeout()`ではなく`window.setTimeout()`と書く。
 
-### ログに変数を埋め込む際は、末尾にコロン(`:`)とピリオド(`.`)を補って埋め込む。
+### ログに変数を埋め込む際は、末尾に `:` を補って埋め込む。
 
-検索しやすいように、ログの文言を不変にするため。
-E.g. `logger.info('Deleted %d log documents.', docIdsToDelete.length);` -> `logger.info('Deleted log documents: %o.', { count: docIdsToDelete.length });`
+検索しやすいように、ログの文言を不変にするため。なお、埋め込んだ変数の末尾に `.` や `。` は記載しない。
+E.g., `logger.info('Deleted %d log documents.', docIdsToDelete.length);` -> `logger.info('Deleted log documents: %o', { count: docIdsToDelete.length });`
 
-### これから実行する処理をログに出力する際は、末尾（ただし、コロンの前）に `...` を記載する。
+### これから実行する処理をログに出力する際は、末尾（ただし、 `:` の前）に `...` を記載する。
 
-E.g. `logger.info('Deleting log documents ...: %o.', { count: docIdsToDelete.length });`
+E.g., `logger.info('Deleting log documents ...: %o', { count: docIdsToDelete.length });`
 
-### 必ずログの文末に `.` もしくは `。` を記載する。
+### ログの末尾に変数が埋め込まれていない場合は、文末に `.` を記載する。
 
-たとえ、変数を末尾に埋め込んだとしても、末尾に `.` もしくは `。` 記載する。
-E.g. `logger.info('Deleting log documents ...: %o.', { count: docIdsToDelete.length });`
+E.g., `logger.info('Deleting log documents.');`, `logger.info('Deleting log documents ...: %o', { count: docIdsToDelete.length });`
 
 ### React
 
