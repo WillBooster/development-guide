@@ -115,6 +115,20 @@ References
 
 e.g. `setTimeout()`ではなく`window.setTimeout()`と書く。
 
+### ログに変数を埋め込む際は、文言の末尾に埋め込む。
+
+検索しやすいように、ログの文言を不変にするため。
+E.g. `logger.info('Deleted %d log documents.', docIdsToDelete.length);` -> `logger.info('Deleted log documents: %o.', { count: docIdsToDelete.length });`
+
+### これから実行する処理をログに出力する際は、文の最後に `...` を記載する。
+
+E.g. `logger.info('Deleting log documents ...: %o.', { count: docIdsToDelete.length });`
+
+### 必ずログの末尾に `.` もしくは `。` を記載する。
+
+たとえ、変数を末尾に埋め込んだとしても、末尾に `.` もしくは `。` 記載する。
+E.g. `logger.info('Deleting log documents ...: %o.', { count: docIdsToDelete.length });`
+
 ### React
 
 #### アンマウントされたコンポーネントの非同期処理
