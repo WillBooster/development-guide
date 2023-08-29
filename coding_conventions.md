@@ -41,6 +41,7 @@ Allow List
 | `sec` | second（秒） | 補足的な情報だから。変数などが持つ数値の単位を表す接尾辞に限定する。e.g. `timeLimitSec` |
 | `ms` | millisecond | 同上。e.g. `timeLimitMs` |
 | `prop(s)` | property | Reactの用語だから。 https://ja.reactjs.org/docs/components-and-props.html |
+| `diff` | difference | コマンド名やIT用語として十分に流布しているから。形容詞（different）や別の語（difficultyなど）の意味で使用してはならない。 |
 
 References
 - https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md
