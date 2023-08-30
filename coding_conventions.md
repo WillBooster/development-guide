@@ -49,8 +49,8 @@ References
 
 ### 頭字語
 
-頭字語（e.g., CSV, HTTP）は単語の字数に依らず他の単語と同じように扱う。
-つまり、camelCaseならば語の先頭を大文字または小文字に、先頭以外を小文字に（e.g., `Csv`, `Http`）する。
+頭字語（e.g., AI, CSV, HTTP）は単語の字数に依らず他の単語と同じように扱う。
+つまり、camelCaseならば語の先頭を大文字または小文字に、先頭以外を小文字に（e.g., `Ai`, `Csv`, `Http`）する。
 
 References
 - [C#のコーディング規約では、3文字以上はcamelCase](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions#capitalization-rules-for-identifiers)
