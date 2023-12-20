@@ -44,7 +44,9 @@ Windowsをご利用の方は、Windows Subsystem for Linux 2（WSL2）上での�
 2. `asdf`をインストールする。
    - `brew install asdf`
    - cf. http://asdf-vm.com/guide/getting-started.html#_2-download-asdf
-3. 「全プラットフォーム共通」の手順に進む。
+3. `gpg`, `gawk` をインストールする。
+   - cf. https://asdf-vm.com/guide/getting-started.html#_4-install-a-plugin
+4. 「全プラットフォーム共通」の手順に進む。
 
 #### 全プラットフォーム共通
 
