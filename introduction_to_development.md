@@ -54,7 +54,7 @@ Windowsをご利用の方は、Windows Subsystem for Linux 2（WSL2）上での�
 3. `asdf`にNode.jsとYarnのプラグインを追加する。
    - `asdf plugin add nodejs; asdf plugin add yarn`
 4. Node.jsをインストールして、システム全体で使用するバージョンを指定する。
-   - `asdf list all nodejs; asdf install nodejs lts; asdf global nodejs lts`
+   - `asdf list all nodejs; asdf install nodejs latest; asdf global nodejs latest`
 5. Yarnをインストールして、システム全体で使用するバージョンを指定する。
    - `asdf install yarn $(npm show yarn version); asdf global yarn $(npm show yarn version)`
 6. `asdf`の設定を変更する。
