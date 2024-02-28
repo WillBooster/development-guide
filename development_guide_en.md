@@ -1,5 +1,3 @@
----
-
 # Development Guide
 
 This document compiles guidance for developers who are new to WillBooster.
