@@ -1,4 +1,4 @@
-# FAQ Edumap
+# Edumap
 
 ### `vagrant provision --provision-with app-install`でエラー`Logging into ghcr.io for user WillBooster-bot failed`が発生する
 
