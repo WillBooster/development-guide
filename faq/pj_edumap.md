@@ -26,3 +26,11 @@ sudo systemctl restart systemd-resolved.service
 #### 参照
 
 - https://discord.com/channels/896895021138214952/896897451049517060/1242020919363244153
+
+### コンテナ`app-d-02-nc4`でマイグレーションを実行したい
+
+```sh
+/var/www/app/Edumap2/bin/cake nc4.migrations all
+```
+
+サブコマンド（上記では`all`）の詳細はドキュメントの[5.7. マイグレーション](https://github.com/NC-4/docs/wiki/5.7.-%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)で示されている。
