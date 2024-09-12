@@ -27,7 +27,7 @@ sudo systemctl restart systemd-resolved.service
 
 - https://discord.com/channels/896895021138214952/896897451049517060/1242020919363244153
 
-### コンテナ`app-d-02-nc4`でマイグレーションを実行したい
+### コンテナ`app-02-nc4`でマイグレーションを実行したい
 
 ```sh
 /var/www/app/Edumap2/bin/cake nc4.migrations all
