@@ -101,7 +101,7 @@ References
 
 #### 列挙型（`enum`）を使用しない
 
-TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを妨げるため、`enum`を使用してはならない。
+`enum`を使用すると、TypeScriptコンパイラが即時実行関数を生成するのでtree shakingが妨げられる。
 
 代わりにオブジェクトリテラルを使用する。
 元々列挙型を使用するほどではなかった小規模なコードでは、ユニオン型を使用し続けてよい。
@@ -110,26 +110,90 @@ TypeScriptコンパイラが即時実行関数を生成して、Tree shakingを�
 References
 - [列挙型(enum)の問題点と代替手段 | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/enum/enum-problems-and-alternatives-to-enums)
 
+#### 必要がない限り`interface`でなく`type`を使用する
+
+`interface`には同名の宣言によってマージできる性質がある。
+これはライブラリに拡張性を持たせる目的では有用だが、大抵のアプリケーションの開発においては不要な性質であり、むしろ想定外のマージによって不具合を引き起こしうる欠点のほうが大きくなる。
+
+References
+- [interfaceとtypeの違い | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/object-oriented/interface/interface-vs-type-alias)
+
 #### `window`オブジェクトのプロパティを使用するとき、`window`を省略しない
 
 `window`オブジェクトのプロパティか、他の変数・関数かを一目では区別できなくなるので、`window`を省略してはならない。
 
-E.g., `setTimeout()`ではなく`window.setTimeout()`と書く。
+:x:
 
-### ログに変数を埋め込む際は、末尾に `:` を補って埋め込む。
+```ts
+setTimeout()
+```
 
-検索しやすいように、ログの文言を不変にするため。なお、埋め込んだ変数の末尾に `.` や `。` は記載しない。
-E.g., `logger.info('Deleted %d log documents.', docIdsToDelete.length);` -> `logger.info('Deleted log documents: %o', { count: docIdsToDelete.length });`
+:white_check_mark:
 
-### これから実行する処理をログに出力する際は、末尾（ただし、 `:` の前）に `...` を記載する。
+```ts
+window.setTimeout()
+```
 
-E.g., `logger.info('Deleting log documents ...: %o', { count: docIdsToDelete.length });`
+#### ログのメッセージの文末に`.`を付ける
 
-### ログの末尾に変数が埋め込まれていない場合は、文末に `.` を記載する。
+:x:
 
-E.g., `logger.info('Deleting log documents.');`, `logger.info('Deleting log documents ...: %o', { count: docIdsToDelete.length });`
+```ts
+logger.info('Deleted items');
+```
+
+:white_check_mark:
+
+```ts
+logger.info('Deleted items.');
+```
+
+#### ログに変数を含めるとき、メッセージの末尾に`:`を付けて埋め込む
+
+ログの途中に変数を埋め込むと、変数の値によってログの文言が変化するので、単純な文字列では検索しづらくなる。
+変数をログの末尾に置くことで、文言を不変とし、検索しやすくすることができる。
+
+なお、埋め込んだ変数の末尾に `.` や `。` は記載しない。
+
+:x:
+
+```ts
+logger.info('Deleted %d items.', items.length);
+```
+
+:white_check_mark:
+
+```ts
+logger.info('Deleted items: %o', { count: items.length });
+```
+
+#### 未完了の処理をロギングするとき、メッセージの文末（`:`の前）に`...`を付ける
+
+:white_check_mark:
+
+```ts
+logger.info('Deleting items ...: %o', { count: items.length });
+```
 
 ### React
+
+#### Propsを分割代入しない
+
+:x:
+
+```ts
+const Component: FC.React<Props> = ({ a, b, c, d }) => {
+  // ...
+};
+```
+
+:white_check_mark:
+
+```ts
+const Component: FC.React<Props> = (props) => {
+  // ...
+};
+```
 
 #### アンマウントされたコンポーネントの非同期処理
 
