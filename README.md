@@ -1,5 +1,7 @@
 # development-guide
 
+[![wbfy](https://img.shields.io/badge/wbfy-18.6.1-1e90ff.svg)](https://github.com/WillBooster/shared/tree/main/packages/wbfy)
+
 Guides for developing software in WillBooster Inc.
 
 ## Table of Contents
