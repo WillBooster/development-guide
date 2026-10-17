@@ -97,7 +97,7 @@ References
 
 #### Named importを使用する
 
-可能な限り Default import よりも、 Named import を使う。
+可能な限りDefault importよりも、 Named importを使う。
 
 #### 列挙型（`enum`）を使用しない
 
