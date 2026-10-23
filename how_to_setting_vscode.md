@@ -53,10 +53,10 @@ Japanese Language Packをインストールする。
 
 VS Codeデフォルトのフォントは、お世辞にもプログラミング向けとは言い難い。等幅フォントに変更をオススメする。筆者は[UDEV Gothic](https://github.com/yuru7/udev-gothic)が最近のお気に入り。全角スペースが入ってしまったときに気付きやすいという特徴がある。(全角スペースの対処だけならVSCodeの拡張にもありますので、お好みで。)
 
-
 ## その他オススメ拡張
 
 ### 見た目系
+
 - [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) : インデントを色別で見やすくしてくれる
 
 - [errorlens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) : エラー表示が見やすくなる。エラーメッセージがマウスホバーしなくても見えるようになる。
