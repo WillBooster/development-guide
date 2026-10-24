@@ -18,7 +18,7 @@
     "verify-full": "bun wb verify --full"
   },
   "devDependencies": {
-    "@willbooster/wb": "22.29.1",
+    "@willbooster/wb": "22.29.3",
     "lefthook": "2.2.2"
   }
 }
