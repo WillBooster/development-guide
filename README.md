@@ -1,7 +1,7 @@
 # development-guide
 
 [![Test](https://github.com/WillBooster/development-guide/actions/workflows/test.yml/badge.svg)](https://github.com/WillBooster/development-guide/actions/workflows/test.yml)
-[![wbfy](https://img.shields.io/badge/wbfy-21.0.2-1e90ff.svg)](https://github.com/WillBooster/shared/tree/main/packages/wbfy)
+[![wbfy](https://img.shields.io/badge/wbfy-21.3.0-1e90ff.svg)](https://github.com/WillBooster/shared/tree/main/packages/wbfy)
 
 Guides for developing software in WillBooster Inc.
 
